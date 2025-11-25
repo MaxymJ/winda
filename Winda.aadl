@@ -1,0 +1,204 @@
+package Projekt
+public
+
+--WINDA KABINA
+
+system Winda
+end Winda;
+
+system implementation Winda.impl
+	subcomponents
+		Przyciski_Pieter: device Przyciski_Pieter.impl;
+		Przyciski_Awarii: device Przyciski_Awarii.impl;
+		Przyciski_Funkcjonalne: device Przyciski_Funkcjonalne;
+		Wentylator: device Wentylator;
+		Drzwi: device Drzwi;
+		Glosnik: device Glosnik;
+		Mikrofon: device Mikrofon;
+		Wyswietlacz: device Wyswietlacz;
+		Swiatla_Winda: device Swiatla_Winda;
+		Kamera_Winda: device Kamera_Winda;
+		Waga: device Waga;
+end Winda.impl;
+
+device Przyciski_Pieter
+end Przyciski_Pieter;
+
+device implementation Przyciski_Pieter.impl
+	subcomponents
+		Pietro0: thread Przycisk_Pietra_0.impl;
+		Pietro1: thread Przycisk_Pietra_1.impl;
+		Pietro2: thread Przycisk_Pietra_2.impl;
+		Pietro3: thread Przycisk_Pietra_3.impl;
+end Przyciski_Pieter.impl;
+
+thread Przycisk_Pietra_0
+end Przycisk_Pietra_0;
+
+thread implementation Przycisk_Pietra_0.impl
+end Przycisk_Pietra_0.impl;
+
+thread Przycisk_Pietra_1
+end Przycisk_Pietra_1;
+
+thread implementation Przycisk_Pietra_1.impl
+end Przycisk_Pietra_1.impl;
+
+thread Przycisk_Pietra_2
+end Przycisk_Pietra_2;
+
+thread implementation Przycisk_Pietra_2.impl
+end Przycisk_Pietra_2.impl;
+
+thread Przycisk_Pietra_3
+end Przycisk_Pietra_3;
+
+thread implementation Przycisk_Pietra_3.impl
+end Przycisk_Pietra_3.impl;
+
+device Przyciski_Awarii
+end Przyciski_Awarii;
+
+device implementation Przyciski_Awarii.impl
+end Przyciski_Awarii.impl;
+
+thread Przycisk_STOP
+end Przycisk_STOP;
+
+thread implementation Przycisk_STOP.impl
+end Przycisk_STOP.impl;
+
+thread Przycisk_Pomoc
+end Przycisk_Pomoc;
+
+thread implementation Przycisk_Pomoc.impl
+end Przycisk_Pomoc.impl;
+
+device Przyciski_Funkcjonalne
+end Przyciski_Funkcjonalne;
+
+device implementation Przyciski_Funkcjonalne.impl
+end Przyciski_Funkcjonalne.impl;
+
+thread Przycisk_Otworz_Drzwi
+end Przycisk_Otworz_Drzwi;
+
+thread implementation Przycisk_Otworz_Drzwi.impl
+end Przycisk_Otworz_Drzwi.impl;
+
+thread Przycisk_Zamknij_Drzwi
+end Przycisk_Zamknij_Drzwi;
+
+thread implementation Przycisk_Zamknij_Drzwi.impl
+end Przycisk_Zamknij_Drzwi.impl;
+
+thread Przycisk_Komunikatow_Glosowych
+end Przycisk_Komunikatow_Glosowych;
+
+thread implementation Przycisk_Komunikatow_Glosowych.impl
+end Przycisk_Komunikatow_Glosowych.impl;
+
+device Wentylator
+end Wentylator;
+
+device implementation Wentylator.impl
+end Wentylator.impl;
+
+device Drzwi
+end Drzwi;
+
+device implementation Drzwi.impl
+end Drzwi.impl;
+
+device Glosnik
+end Glosnik;
+
+device implementation Glosnik.impl
+end Glosnik.impl;
+
+device Mikrofon
+end Mikrofon;
+
+device implementation Mikrofon.impl
+end Mikrofon.impl;
+
+device Wyswietlacz
+end Wyswietlacz;
+
+device implementation Wyswietlacz.impl
+end Wyswietlacz.impl;
+
+device Swiatla_Winda
+end Swiatla_Winda;
+
+device implementation Swiatla_Winda.impl
+end Swiatla_Winda.impl;
+
+device Kamera_Winda
+end Kamera_Winda;
+
+device implementation Kamera_Winda.impl
+end Kamera_Winda.impl;
+
+device Waga
+end Waga;
+
+device implementation Waga.impl
+end Waga.impl;
+
+------------------------------------------------------------------------
+
+system Korytarz
+end Korytarz;
+
+system implementation Korytarz.impl
+	subcomponents
+		Pietro0: system Pietro0.impl;
+		Pietro1: system Pietro1.impl;
+		Pietro2: system Pietro2.impl;
+		Pietro3: system Pietro3.impl;
+end Korytarz.impl;
+
+system Pietro0
+end Pietro0;
+
+system implementation Pietro0.impl
+end Pietro0.impl;
+
+system Pietro1
+end Pietro1;
+
+system implementation Pietro1.impl
+end Pietro1.impl;
+
+system Pietro2
+end Pietro2;
+
+system implementation Pietro2.impl
+end Pietro2.impl;
+
+system Pietro3
+end Pietro3;
+
+system implementation Pietro3.impl
+end Pietro3.impl;
+
+device Swiatla_Korytarz
+end Swiatla_Korytarz;
+
+device implementation Swiatla_Korytarz.impl
+end Swiatla_Korytarz.impl;
+
+device Kamera_Korytarz
+end Kamera_Korytarz;
+
+device implementation Kamera_Korytarz.impl
+end Kamera_Korytarz.impl;
+
+device Czujnik_Ruchu
+end Czujnik_Ruchu;
+
+device implementation Czujnik_Ruchu.impl
+end Czujnik_Ruchu.impl;
+
+end Projekt;

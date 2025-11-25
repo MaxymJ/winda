@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="853df3d6-e3ad-4a6e-bae5-4b43ce0a802c" manual="true">
+    <element uuid="235233be-b2f1-4e53-8423-d5cc9c460fd4" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Czujnik_Ruchu</seg>
+      </bo>
+      <position x="262.0" y="368.0"/>
+      <size width="147.0" height="35.0"/>
+    </element>
+    <element uuid="77741e1e-70e3-4fb7-a080-6cd01a4707db" manual="true">
+      <element uuid="f29e448e-2261-4a87-915f-fd556eefd7b2" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="196.0" y="506.0"/>
+          <point x="208.0" y="506.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Czujnik_Ruchu.impl</seg>
+      </bo>
+      <position x="67.0" y="368.0"/>
+      <size width="175.0" height="35.0"/>
+    </element>
+    <element uuid="39df2be9-4adb-4096-8a07-202e402715d9" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drzwi</seg>
+      </bo>
+      <position x="205.0" y="38.0"/>
+      <size width="91.0" height="35.0"/>
+    </element>
+    <element uuid="193af1fa-a3ba-46bb-b547-99f518408b03" manual="true">
+      <element uuid="edf248dc-2ce4-42cf-87ba-cb3293c01c6e" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="139.0" y="176.0"/>
+          <point x="151.0" y="176.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Drzwi.impl</seg>
+      </bo>
+      <position x="67.0" y="38.0"/>
+      <size width="119.0" height="35.0"/>
+    </element>
+    <element uuid="75959002-dc09-469b-9a33-99e84ca54e50" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Glosnik</seg>
+      </bo>
+      <position x="217.0" y="93.0"/>
+      <size width="102.0" height="35.0"/>
+    </element>
+    <element uuid="f79aa220-cd14-4514-9a02-653f10336d17" manual="true">
+      <element uuid="f58cd594-ce91-4d90-8292-d395bb98a03a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="151.0" y="231.0"/>
+          <point x="163.0" y="231.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Glosnik.impl</seg>
+      </bo>
+      <position x="67.0" y="93.0"/>
+      <size width="130.0" height="35.0"/>
+    </element>
+    <element uuid="92296dd6-a5b5-45b0-a7ae-762c3122db8e" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>kabinawinda</seg>
+      </bo>
+      <position x="298.0" y="478.0"/>
+      <size width="126.0" height="35.0"/>
+    </element>
+    <element uuid="9079d301-b9ac-42cb-b527-0c240e478f5f" manual="true">
+      <element uuid="c5fa8531-7ab7-4ddc-b93b-41e45468b514" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="232.0" y="616.0"/>
+          <point x="244.0" y="616.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>kabinawinda.kabina</seg>
+      </bo>
+      <position x="67.0" y="478.0"/>
+      <size width="211.0" height="35.0"/>
+    </element>
+    <element uuid="c95ab5ea-4863-4459-9124-62c325b9026a" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Kamera</seg>
+      </bo>
+      <position x="490.0" y="93.0"/>
+      <size width="104.0" height="35.0"/>
+    </element>
+    <element uuid="dbcf1afb-60f3-48c4-9509-d5fd977f3754" manual="true">
+      <element uuid="7de86839-fff3-4d6f-a2ac-22fb8d5f6133" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="424.0" y="231.0"/>
+          <point x="436.0" y="231.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Kamera.impl</seg>
+      </bo>
+      <position x="338.0" y="93.0"/>
+      <size width="132.0" height="35.0"/>
+    </element>
+    <element uuid="6f82f9c6-b84e-41c8-8a59-d5e89d7bc132" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Mikrofon</seg>
+      </bo>
+      <position x="223.0" y="148.0"/>
+      <size width="108.0" height="35.0"/>
+    </element>
+    <element uuid="8bd8431e-9ef8-49eb-a2b2-80ee2354dc51" manual="true">
+      <element uuid="f84db36c-0336-4749-a495-700546ba9d4a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="157.0" y="286.0"/>
+          <point x="169.0" y="286.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Mikrofon.impl</seg>
+      </bo>
+      <position x="67.0" y="148.0"/>
+      <size width="136.0" height="35.0"/>
+    </element>
+    <element uuid="497b15ec-a699-4102-88dc-5b11fae64510" manual="true">
+      <element uuid="b06cbcdd-6583-4910-b524-cac8ff1656a5" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przycisk_Pietra_0.impl</seg>
+      </bo>
+      <position x="340.0" y="250.0"/>
+      <size width="231.3228759765625" height="52.0"/>
+    </element>
+    <element uuid="aa152403-c296-4e22-bdc7-d86c1d021dc5" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przyciski_Awarii</seg>
+      </bo>
+      <position x="263.0" y="423.0"/>
+      <size width="148.0" height="35.0"/>
+    </element>
+    <element uuid="981ab880-1981-4239-a768-7d9056088097" manual="true">
+      <element uuid="4a11ff31-da3b-4bff-9f45-67714eeff19a" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="197.0" y="561.0"/>
+          <point x="209.0" y="561.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przyciski_Awarii.impl</seg>
+      </bo>
+      <position x="67.0" y="423.0"/>
+      <size width="176.0" height="35.0"/>
+    </element>
+    <element uuid="24df7896-4d7b-4ea5-843e-5817c738d159" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przyciski_Funkcjonalne</seg>
+      </bo>
+      <position x="306.0" y="533.0"/>
+      <size width="191.0" height="35.0"/>
+    </element>
+    <element uuid="36c53c4e-27e5-4cbc-a60d-6de386fdd16a" manual="true">
+      <element uuid="552978e8-4066-480f-9207-8a18aebe0d6f" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="240.0" y="671.0"/>
+          <point x="252.0" y="671.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przyciski_Funkcjonalne.impl</seg>
+      </bo>
+      <position x="67.0" y="533.0"/>
+      <size width="219.0" height="35.0"/>
+    </element>
+    <element uuid="1ab6605d-ff36-406f-bf86-b31fbb20ead2" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przyciski_Pieter</seg>
+      </bo>
+      <position x="262.0" y="313.0"/>
+      <size width="147.0" height="35.0"/>
+    </element>
+    <element uuid="09e5ff36-334f-4695-a9d7-315b9db9f471" manual="true">
+      <element uuid="27978064-0698-40e9-909b-59644bd32d99" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="196.0" y="451.0"/>
+          <point x="208.0" y="451.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Przyciski_Pieter.impl</seg>
+      </bo>
+      <position x="67.0" y="313.0"/>
+      <size width="175.0" height="35.0"/>
+    </element>
+    <element uuid="b94415d6-2b4a-4de9-ade2-d9e252783f67" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Swiatla</seg>
+      </bo>
+      <position x="464.0" y="38.0"/>
+      <size width="100.0" height="35.0"/>
+    </element>
+    <element uuid="6bde3682-1504-42b4-b32a-5e858f6e85c0" manual="true">
+      <element uuid="0ea61769-5e39-4f11-a81f-c1de17ad81c2" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="398.0" y="176.0"/>
+          <point x="410.0" y="176.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Swiatla.impl</seg>
+      </bo>
+      <position x="316.0" y="38.0"/>
+      <size width="128.0" height="35.0"/>
+    </element>
+    <element uuid="71b27688-6c7d-4c0d-a8c0-2b5d03a5baf7" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Wentylator</seg>
+      </bo>
+      <position x="515.0" y="148.0"/>
+      <size width="116.0" height="35.0"/>
+    </element>
+    <element uuid="2275b5cb-8531-4fa8-a51e-1332bc96a18c" manual="true">
+      <element uuid="258a1f44-4747-4d9a-9549-3e71d6a781d5" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="449.0" y="286.0"/>
+          <point x="461.0" y="286.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Wentylator.impl</seg>
+      </bo>
+      <position x="352.0" y="148.0"/>
+      <size width="144.0" height="35.0"/>
+    </element>
+    <element uuid="e7dcd419-34a3-4594-9c30-c180b73a5313" manual="true">
+      <bo>
+        <seg>classifier</seg>
+        <seg>Wyswietlacz</seg>
+      </bo>
+      <position x="245.0" y="203.0"/>
+      <size width="131.0" height="35.0"/>
+    </element>
+    <element uuid="13a1d952-51b4-4197-8f38-b6a23991941a" manual="true">
+      <element uuid="50581888-0504-4317-ac03-56549d4602d5" manual="true">
+        <bo>
+          <seg>realization</seg>
+        </bo>
+        <bendpoints>
+          <point x="179.0" y="341.0"/>
+          <point x="191.0" y="341.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Wyswietlacz.impl</seg>
+      </bo>
+      <position x="67.0" y="203.0"/>
+      <size width="159.0" height="35.0"/>
+    </element>
+    <bo>
+      <seg>package</seg>
+      <seg>Winda</seg>
+    </bo>
+    <position x="-50.0" y="120.0"/>
+    <size width="643.0" height="580.0"/>
+  </element>
+  <config type="package" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>package</seg>
+      <seg>Winda</seg>
+    </context>
+  </config>
+</diagram:Diagram>

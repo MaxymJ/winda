@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="875b226a-2204-4ec7-bb09-a1cb50ac3f88" manual="true">
+    <element uuid="ba0bae45-3684-488c-959d-e8cbd3fba862" manual="true">
+      <element uuid="87c39c53-1117-490b-973e-9c2911f7f782" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Drzwi</seg>
+        </bo>
+        <position x="240.0" y="130.0"/>
+        <size width="90.51562118530273" height="35.0"/>
+      </element>
+      <element uuid="84960187-483b-44bf-9a95-608385866545" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Glosnik</seg>
+        </bo>
+        <position x="180.0" y="490.0"/>
+        <size width="130.0" height="36.0"/>
+      </element>
+      <element uuid="27cf0636-5b9e-4628-b3af-e71b189d3191" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Kamera_Winda</seg>
+        </bo>
+        <position x="180.0" y="410.0"/>
+        <size width="149.08334350585938" height="36.0"/>
+      </element>
+      <element uuid="3d333043-4071-4dd8-aef2-ea886e6d4bad" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Mikrofon</seg>
+        </bo>
+        <position x="180.0" y="450.0"/>
+        <size width="130.0" height="36.0"/>
+      </element>
+      <element uuid="8cb7fd1e-a504-4282-9737-5986180cf934" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Przyciski_Awarii</seg>
+        </bo>
+        <position x="170.0" y="370.0"/>
+        <size width="153.49739837646484" height="36.0"/>
+      </element>
+      <element uuid="6b7b6525-dc76-4742-ab0f-1774b91da06d" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Przyciski_Funkcjonalne</seg>
+        </bo>
+        <position x="130.0" y="330.0"/>
+        <size width="196.5052032470703" height="36.0"/>
+      </element>
+      <element uuid="58929cec-0f35-40b9-9521-d108bee24ad0" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Przyciski_Pieter</seg>
+        </bo>
+        <position x="180.0" y="90.0"/>
+        <size width="152.0260467529297" height="36.0"/>
+      </element>
+      <element uuid="911a1df4-90d5-4691-83fe-f5a2cbcee531" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Swiatla_Winda</seg>
+        </bo>
+        <position x="190.0" y="290.0"/>
+        <size width="145.37891387939453" height="36.0"/>
+      </element>
+      <element uuid="8857a2c9-893b-4a75-9464-08cc992f30a9" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Waga</seg>
+        </bo>
+        <position x="200.0" y="210.0"/>
+        <size width="130.0" height="36.0"/>
+      </element>
+      <element uuid="15590d34-b85e-4f67-9331-ea0c688d3ea0" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Wentylator</seg>
+        </bo>
+        <position x="200.0" y="250.0"/>
+        <size width="130.0" height="36.0"/>
+      </element>
+      <element uuid="d226ed3a-de65-421d-8633-cd9b33f9634e" manual="true">
+        <bo>
+          <seg>subcomponent</seg>
+          <seg>Wyswietlacz</seg>
+        </bo>
+        <position x="200.0" y="170.0"/>
+        <size width="130.5286407470703" height="36.0"/>
+      </element>
+      <bo>
+        <seg>classifier</seg>
+        <seg>Winda.impl</seg>
+      </bo>
+      <position x="500.0" y="30.0"/>
+      <size width="450.0" height="682.0"/>
+    </element>
+    <bo>
+      <seg>package</seg>
+      <seg>Projekt</seg>
+    </bo>
+    <position y="-50.0"/>
+    <size width="975.7447700500488" height="745.0"/>
+  </element>
+  <config type="package" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties/>
+    <context>
+      <seg>package</seg>
+      <seg>Projekt</seg>
+    </context>
+  </config>
+</diagram:Diagram>
