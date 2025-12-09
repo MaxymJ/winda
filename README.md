@@ -118,5 +118,7 @@ PROCESSOR:
 
 a) CPU – procesor realizujący sterowanie i planowanie wątków;
 
-
+![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/4dfd9af8-c26d-4394-9225-4471e540a4c3.jpg)
 ![image alt](https://github.com/MaxymJ/winda/blob/f36674931b903a6b6c6dc08819bb331f6466923f/30632716-7b2b-488a-8a33-88ea7221c44e.jpg)
+![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/686bd0c7-729d-49e5-b157-9e63ca8aff43.jpg)
+![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/61a8d5a8-3ed1-40e3-ae02-566ef6fed44b.jpg)
