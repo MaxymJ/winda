@@ -117,3 +117,6 @@ a) Materialy_Video – pamięć przechowująca materiały wideo;
 PROCESSOR:
 
 a) CPU – procesor realizujący sterowanie i planowanie wątków;
+
+
+![image alt](https://github.com/MaxymJ/winda/blob/f36674931b903a6b6c6dc08819bb331f6466923f/30632716-7b2b-488a-8a33-88ea7221c44e.jpg)
