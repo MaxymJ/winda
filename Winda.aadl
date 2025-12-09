@@ -1,204 +1,747 @@
-package Projekt
-public
+package Projekt_Winda
+public 
 
---WINDA KABINA
+--Winda--------------------------------------------------------------------------------------------------------------------------
 
-system Winda
-end Winda;
+system Winda_Proj
+end Winda_Proj;
 
-system implementation Winda.impl
+system implementation Winda_Proj.impl
 	subcomponents
-		Przyciski_Pieter: device Przyciski_Pieter.impl;
-		Przyciski_Awarii: device Przyciski_Awarii.impl;
-		Przyciski_Funkcjonalne: device Przyciski_Funkcjonalne;
-		Wentylator: device Wentylator;
+		S_1: system Kabina.impl;
+		S_2: system Pietra.impl;
+		S_3: system Sterowanie.impl;
+		sygnaly: bus sygnaly.impl;
+	connections
+		dane: port S_1.dane -> S_3.dane;
+		wlaczanie: port S_1.wyl_wl -> S_3.czas;
+		czasowka: port S_3.czas1 -> S_1.wl_wyl;
+		czasowwa1: port S_2.nagranie1 -> S_3.inp2;
+		czasowka4: port S_3.czas3 -> S_2.czas3;
+		syg1: port S_2.s1 -> sygnaly.p1;
+		syg2: port S_2.s2 -> sygnaly.p2;
+		syg3: port S_2.s3 -> sygnaly.p3;
+		syg4: port S_2.s4 -> sygnaly.p4;	
+		syg5: port sygnaly.p5 -> S_3.p21;
+end Winda_Proj.impl;
+
+system Kabina
+	features
+		dane: out data port;
+		wyl_wl: out event port;
+		wl_wyl: in event port;
+end Kabina;
+
+system implementation Kabina.impl
+	subcomponents
+		Przyciski_Pieter: system Przyciski_Pieter.impl;
+		Przyciski_Funkcjonalne: system Przyciski_Funkcjonalne.impl;
+		Wentylator: device Wentylator_Windy;
 		Drzwi: device Drzwi;
 		Glosnik: device Glosnik;
 		Mikrofon: device Mikrofon;
 		Wyswietlacz: device Wyswietlacz;
-		Swiatla_Winda: device Swiatla_Winda;
-		Kamera_Winda: device Kamera_Winda;
+		Swiatla: device Swiatla_Winda;
+		Kamera: device Kamera_Winda;
 		Waga: device Waga;
-end Winda.impl;
+		Wylaczanie: bus wylaczanie;
+		kryzys: bus kryzys;
+		element: bus element;
+		element2: bus element2;
+	connections
+		conn1: port Przyciski_Funkcjonalne.wentylacja1 -> element.w1a;
+		conn2: port Przyciski_Funkcjonalne.otworz -> Drzwi.otworz1;
+		conn4: port Przyciski_Funkcjonalne.zamknij -> Drzwi.zamknij;
+		conn5: port Przyciski_Funkcjonalne.glos -> element.w1b;
+		conn7: port Kamera.nagranie -> Wylaczanie.nagranie;
+		conn8: port Waga.masa -> Wylaczanie.masa;
+		conn9: port Wylaczanie.dane -> dane;
+		conn10: port Przyciski_Pieter.piet0 -> Wylaczanie.w1;
+		conn11: port Przyciski_Pieter.piet1 -> Wylaczanie.w2;
+		conn12: port Przyciski_Pieter.piet2 -> Wylaczanie.w3;
+		conn13: port Przyciski_Pieter.piet3 -> Wylaczanie.w4;
+		conn14: port Przyciski_Funkcjonalne.pomoc -> kryzys.w1;
+		conn15: port Przyciski_Funkcjonalne.awaria1 -> kryzys.w2;
+		conn15a: port kryzys.w3 -> Wylaczanie.w5;
+--		conn16: port Wylaczanie.w6 -> Swiatla.wlacz;
+--		conn17: port Wylaczanie.w6 -> Wyswietlacz.wlacz;
+--		conn18: port Wylaczanie.w6 -> Waga.wlacz;
+--		conn19: port Wylaczanie.w6 -> Kamera.wlacz;
+--		conn20: port Wylaczanie.w6 -> Mikrofon.wlacz;
+--		conn21: port Wylaczanie.w7 -> Swiatla.wylacz;
+--		conn22: port Wylaczanie.w7 -> Wyswietlacz.wylacz;
+--		conn23: port Wylaczanie.w7 -> Waga.wylacz;
+--		conn24: port Wylaczanie.w7 -> Kamera.wylacz;
+--		conn25: port Wylaczanie.w7 -> Mikrofon.wylacz;
+		conn26: port Wylaczanie.wej2 -> wyl_wl;
+		d1: port element.w2a1 -> Wentylator.wlacz;
+		d2: port element.w2a2 -> Glosnik.wlacz;
+		d3: port element.w2b1 -> Wentylator.wylacz;
+		d4: port element.w2b2 -> Glosnik.wylacz;
+		d5: port element2.m1 ->Wyswietlacz.wlacz;
+		d6: port element2.m2 ->Mikrofon.wlacz;
+		d7: port element2.m3 ->Swiatla.wlacz;
+		d8: port element2.m4 ->Kamera.wlacz;
+		d9: port element2.m5 ->Waga.wlacz;
+		d10: port element2.n1 ->Wyswietlacz.wylacz;
+		d11: port element2.n2 ->Mikrofon.wylacz;
+		d12: port element2.n3 ->Swiatla.wylacz;
+		d13: port element2.n4 ->Kamera.wylacz;
+		d14: port element2.n5 ->Waga.wylacz;
+		d15: port Wylaczanie.w6 -> element2.w1;
+		d16: port Wylaczanie.w7 -> element2.w2;
+		d17: port wl_wyl -> Wylaczanie.wej1;
+		d19: port Wylaczanie.m1 -> Drzwi.otwzam;
 
-device Przyciski_Pieter
+end Kabina.impl;
+
+system Przyciski_Pieter
+	features
+		piet0: out event port;
+		piet1: out event port;
+		piet2: out event port;
+		piet3: out event port;
 end Przyciski_Pieter;
 
-device implementation Przyciski_Pieter.impl
+system implementation Przyciski_Pieter.impl
 	subcomponents
-		Pietro0: thread Przycisk_Pietra_0.impl;
-		Pietro1: thread Przycisk_Pietra_1.impl;
-		Pietro2: thread Przycisk_Pietra_2.impl;
-		Pietro3: thread Przycisk_Pietra_3.impl;
+		Przycisk_Pietro0: device Przycisk_Pietra_0.impl;
+		Przycisk_Pietro1: device Przycisk_Pietra_1.impl;
+		Przycisk_Pietro2: device Przycisk_Pietra_2.impl;
+		Przycisk_Pietro3: device Przycisk_Pietra_3.impl;
+	connections
+		conn1: port Przycisk_Pietro0.pietro -> piet0;
+		conn2: port Przycisk_Pietro1.pietro -> piet1;
+		conn3: port Przycisk_Pietro2.pietro -> piet2;
+		conn4: port Przycisk_Pietro3.pietro -> piet3;
 end Przyciski_Pieter.impl;
 
-thread Przycisk_Pietra_0
+bus wylaczanie
+	features
+		w1: in event port;
+		w2: in event port;
+		wej1: in event port;
+		wej2: out event port;
+		w3: in event port;
+		w4: in event port;
+		w5: in event port;
+		w6: out event port;
+		w7: out event port;
+		dane: out data port;
+		masa: in data port;
+		nagranie: in data port;
+		m1: out event port;
+		m2: out event port;
+		m3: out event port;
+		m4: out event port;
+		m5: out event port;
+		m6: in event port;
+		m7: in event port;
+		
+end wylaczanie;
+
+bus implementation wylaczanie.impl
+end wylaczanie.impl;
+
+bus sygnaly
+	features
+	p1: in event port;
+	p2: in event port;
+	p3: in event port;
+	p4: in event port;
+	p5: out event port;
+end sygnaly;
+
+bus implementation sygnaly.impl
+end sygnaly.impl;
+
+device Przycisk_Pietra_0
+		features
+		pietro: out event port;
 end Przycisk_Pietra_0;
 
-thread implementation Przycisk_Pietra_0.impl
+device implementation Przycisk_Pietra_0.impl
 end Przycisk_Pietra_0.impl;
 
-thread Przycisk_Pietra_1
+device Przycisk_Pietra_1
+		features
+		pietro: out event port;
 end Przycisk_Pietra_1;
 
-thread implementation Przycisk_Pietra_1.impl
+device implementation Przycisk_Pietra_1.impl
 end Przycisk_Pietra_1.impl;
 
-thread Przycisk_Pietra_2
+device Przycisk_Pietra_2
+		features
+		pietro: out event port;
 end Przycisk_Pietra_2;
 
-thread implementation Przycisk_Pietra_2.impl
+device implementation Przycisk_Pietra_2.impl
 end Przycisk_Pietra_2.impl;
 
-thread Przycisk_Pietra_3
+device Przycisk_Pietra_3
+		features
+		pietro: out event port;
 end Przycisk_Pietra_3;
 
-thread implementation Przycisk_Pietra_3.impl
+device implementation Przycisk_Pietra_3.impl
 end Przycisk_Pietra_3.impl;
 
 device Przyciski_Awarii
+		features
+		otworz: out event port;
 end Przyciski_Awarii;
 
 device implementation Przyciski_Awarii.impl
 end Przyciski_Awarii.impl;
 
-thread Przycisk_STOP
+device Przycisk_STOP
+	features
+		stop: out event port;
 end Przycisk_STOP;
 
-thread implementation Przycisk_STOP.impl
+device implementation Przycisk_STOP.impl
 end Przycisk_STOP.impl;
 
-thread Przycisk_Pomoc
+device Przycisk_Pomoc
+	features
+		pomoc: out event port;
 end Przycisk_Pomoc;
 
-thread implementation Przycisk_Pomoc.impl
+device implementation Przycisk_Pomoc.impl
 end Przycisk_Pomoc.impl;
 
-device Przyciski_Funkcjonalne
+system Przyciski_Funkcjonalne
+	features
+		pomoc: out event port;
+		glos: out event port;
+		zamknij: out event port;
+		otworz: out event port;
+		awaria1: out event port;
+		wentylacja1: out event port;
 end Przyciski_Funkcjonalne;
 
-device implementation Przyciski_Funkcjonalne.impl
+system implementation Przyciski_Funkcjonalne.impl
+	subcomponents
+		Wlacz_Dzwieki_Przyciskow: device Przycisk_Komunikatow_Glosowych.impl;
+		Otwarz_Drzwi: device Przycisk_Otworz_Drzwi.impl;
+		Zamknij_Drzwi: device Przycisk_Zamknij_Drzwi.impl;
+		Wentylacja: device Wentylator.impl;
+		AWARIA: device Przyciski_Awarii.impl;
+		Ochrona: device Przycisk_Pomoc.impl;
+	connections
+		conn1: port Otwarz_Drzwi.otworz -> otworz;
+		conn2: port AWARIA.otworz -> awaria1;
+		conn3: port Wentylacja.wentylacja -> wentylacja1;
+		conn4: port Zamknij_Drzwi.zamknij -> zamknij;
+		conn5: port Wlacz_Dzwieki_Przyciskow.glos -> glos;
+		conn6: port Ochrona.pomoc -> pomoc;
+		
 end Przyciski_Funkcjonalne.impl;
-
-thread Przycisk_Otworz_Drzwi
+device Przycisk_Otworz_Drzwi
+	features
+		otworz: out event port;
 end Przycisk_Otworz_Drzwi;
 
-thread implementation Przycisk_Otworz_Drzwi.impl
+device implementation Przycisk_Otworz_Drzwi.impl
 end Przycisk_Otworz_Drzwi.impl;
 
-thread Przycisk_Zamknij_Drzwi
+device Przycisk_Zamknij_Drzwi
+	features
+		zamknij: out event port;
 end Przycisk_Zamknij_Drzwi;
 
-thread implementation Przycisk_Zamknij_Drzwi.impl
+device implementation Przycisk_Zamknij_Drzwi.impl
 end Przycisk_Zamknij_Drzwi.impl;
 
-thread Przycisk_Komunikatow_Glosowych
+device Przycisk_Komunikatow_Glosowych
+	features
+		glos: out event port;
 end Przycisk_Komunikatow_Glosowych;
 
-thread implementation Przycisk_Komunikatow_Glosowych.impl
+device implementation Przycisk_Komunikatow_Glosowych.impl
 end Przycisk_Komunikatow_Glosowych.impl;
 
 device Wentylator
+	features
+		wentylacja: out event port;
 end Wentylator;
 
 device implementation Wentylator.impl
 end Wentylator.impl;
 
+device Wentylator_Windy
+	features
+		wlacz: in event port;
+		wylacz: in event port;
+end Wentylator_Windy;
+
+device implementation Wentylator_Windy.impl
+end Wentylator_Windy.impl;
+
 device Drzwi
+	features
+	otworz1: in event port;
+	zamknij: in event port;
+	otwzam: in event port;
 end Drzwi;
 
 device implementation Drzwi.impl
 end Drzwi.impl;
 
 device Glosnik
+	features
+		wlacz: in event port;
+		wylacz: in event port;
 end Glosnik;
 
 device implementation Glosnik.impl
 end Glosnik.impl;
 
 device Mikrofon
+	features
+		wlacz: in event port;
+		wylacz: in event port;
 end Mikrofon;
 
 device implementation Mikrofon.impl
 end Mikrofon.impl;
 
 device Wyswietlacz
+	features
+		wlacz: in event port;
+		wylacz: in event port;
 end Wyswietlacz;
 
 device implementation Wyswietlacz.impl
 end Wyswietlacz.impl;
 
 device Swiatla_Winda
+	features
+		wlacz: in event port;
+		wylacz: in event port;
 end Swiatla_Winda;
 
 device implementation Swiatla_Winda.impl
 end Swiatla_Winda.impl;
 
 device Kamera_Winda
+	features
+		wlacz: in event port;
+		wylacz: in event port;
+		nagranie: out data port;
 end Kamera_Winda;
 
 device implementation Kamera_Winda.impl
 end Kamera_Winda.impl;
 
 device Waga
+	features
+		wlacz: in event port;
+		wylacz: in event port;
+		masa: out data port;
 end Waga;
 
 device implementation Waga.impl
 end Waga.impl;
 
-------------------------------------------------------------------------
+bus kryzys
+	features
+		w1: in event port;
+		w2: in event port;
+		w3: out event port;
+end kryzys;
 
-system Korytarz
-end Korytarz;
+bus implementation kryzys.impl
+end kryzys.impl;
 
-system implementation Korytarz.impl
+bus element
+	features
+		w1a: in event port;
+		w1b: in event port;
+		w2a1: out event port;
+		w2a2: out event port;
+		w2b1: out event port;
+		w2b2: out event port;
+end element;
+
+bus implementation element.impl	
+end element.impl;
+
+bus element2
+	features
+		w1: in event port;
+		w2: in event port;
+		m1: out event port;
+		m2: out event port;
+		m3: out event port;
+		m4: out event port;
+		m5: out event port;
+		n1: out event port;
+		n2: out event port;
+		n3: out event port;
+		n4: out event port;
+		n5: out event port;
+end element2;
+
+bus implementation element2.impl	
+end element2.impl;
+
+
+--Pietra--------------------------------------------------------------------------------------------------------------------------
+
+system Pietra
+	features
+		nagranie1: out data port;
+--		nagranie2: out data port;
+--		nagranie3: out data port;
+--		nagranie4: out data port;
+--		czas: in event port;
+--		czas2: out event port;
+		czas3: in event port;
+		s1: out event port;
+		s2: out event port;
+		s3: out event port;
+		s4: out event port;
+		
+end Pietra;
+
+system implementation Pietra.impl
 	subcomponents
-		Pietro0: system Pietro0.impl;
-		Pietro1: system Pietro1.impl;
-		Pietro2: system Pietro2.impl;
-		Pietro3: system Pietro3.impl;
-end Korytarz.impl;
+		pietro0: system Pietro0.impl;
+		pietro1: system Pietro1.impl;
+		pietro2: system Pietro2.impl;
+		pietro3: system Pietro3.impl;
+		Drzwi: device Drzwi.impl;
+		magistra: bus pietra1.impl;
+	connections
+		conn1: port pietro0.nagranie -> magistra.n1;
+		conn2: port pietro1.nagranie -> magistra.n2;
+		conn3: port pietro2.nagranie -> magistra.n3;
+		conn4: port pietro3.nagranie -> magistra.n4;
+		conn5: port magistra.nagrania -> nagranie1;
+		conn6: port czas3 -> magistra.m1;
+		conn7: port magistra.m2 -> pietro0.wylacz;
+		conn8: port magistra.m3 -> pietro1.wylacz;
+		conn9: port magistra.m4 -> pietro2.wylacz;
+		conn10: port magistra.m5 -> pietro3.wylacz;
+		conn11: port pietro0.s3 ->s1;
+		conn12: port pietro1.s3 ->s2;
+		conn13: port pietro2.s3 ->s3;
+		conn14: port pietro3.s3 ->s4;
+		--conn10: port Pietra.nagranie1 -> Sterowanie.inp1;
+	
+end Pietra.impl;
 
 system Pietro0
+	features
+		nagranie: out data port;
+		wylacz: in event port;
+		s3: out event port;
 end Pietro0;
 
 system implementation Pietro0.impl
+	subcomponents
+		swiatla: device Swiatla_Korytarz.impl;
+		kamera: device Kamera_Korytarz.impl;
+		czujnik: device Czujnik_Ruchu.impl;
+		polaczanie: bus polaczanie.impl;
+	connections
+		conn1: port kamera.output -> nagranie;
+		conn2: port czujnik.syg1 -> kamera.input1;
+		conn3: port czujnik.syg2 -> swiatla.input1;
+		conn4: port polaczanie.m1 -> swiatla.input2;
+		conn5: port polaczanie.m2 -> kamera.input2;
+		conn6: port wylacz -> polaczanie.wej1;
+		conn7: port czujnik.syg3 ->s3;
 end Pietro0.impl;
 
 system Pietro1
+	features
+		nagranie: out data port;
+		wylacz: in event port;
+		s3: out event port;
 end Pietro1;
 
 system implementation Pietro1.impl
+		subcomponents
+		swiatla: device Swiatla_Korytarz.impl;
+		kamera: device Kamera_Korytarz.impl;
+		czujnik: device Czujnik_Ruchu.impl;
+		polaczanie: bus polaczanie.impl;
+	connections
+		conn1: port kamera.output -> nagranie;
+		conn2: port czujnik.syg1 -> kamera.input1;
+		conn3: port czujnik.syg2 -> swiatla.input1;
+		conn4: port polaczanie.m1 -> swiatla.input2;
+		conn5: port polaczanie.m2 -> kamera.input2;
+		conn6: port wylacz -> polaczanie.wej1;
+		conn7: port czujnik.syg3 ->s3;
 end Pietro1.impl;
 
 system Pietro2
+	features
+		nagranie: out data port;
+		wylacz: in event port;
+		s3: out event port;
 end Pietro2;
 
 system implementation Pietro2.impl
+		subcomponents
+		swiatla: device Swiatla_Korytarz.impl;
+		kamera: device Kamera_Korytarz.impl;
+		czujnik: device Czujnik_Ruchu.impl;
+		polaczanie: bus polaczanie.impl;
+	connections
+		conn1: port kamera.output -> nagranie;
+		conn2: port czujnik.syg1 -> kamera.input1;
+		conn3: port czujnik.syg2 -> swiatla.input1;
+		conn4: port polaczanie.m1 -> swiatla.input2;
+		conn5: port polaczanie.m2 -> kamera.input2;
+		conn6: port wylacz -> polaczanie.wej1;
+		conn7: port czujnik.syg3 ->s3;
 end Pietro2.impl;
 
 system Pietro3
+	features
+		nagranie: out data port;
+		wylacz: in event port;
+		s3: out event port;
 end Pietro3;
 
 system implementation Pietro3.impl
+		subcomponents
+		swiatla: device Swiatla_Korytarz.impl;
+		kamera: device Kamera_Korytarz.impl;
+		czujnik: device Czujnik_Ruchu.impl;
+		polaczanie: bus polaczanie.impl;
+	connections
+		conn1: port kamera.output -> nagranie;
+		conn2: port czujnik.syg1 -> kamera.input1;
+		conn3: port czujnik.syg2 -> swiatla.input1;
+		conn4: port polaczanie.m1 -> swiatla.input2;
+		conn5: port polaczanie.m2 -> kamera.input2;
+		conn6: port wylacz -> polaczanie.wej1;
+		conn7: port czujnik.syg3 ->s3;
 end Pietro3.impl;
 
+bus polaczanie
+	features
+		m1: out event port;
+		m2: out event port;
+		wej1: in event port;
+end polaczanie;
+
+bus implementation polaczanie.impl
+end polaczanie.impl;
+
+bus pietra1
+	features
+	nagrania: out data port;
+	n1: in data port;
+	n2: in data port;
+	n3: in data port;
+	n4: in data port;
+	m1: in event port;
+	m2: out event port;
+	m3: out event port;
+	m4: out event port;
+	m5: out event port;
+	
+end pietra1;
+
+bus implementation pietra1.impl
+end pietra1.impl;
+
 device Swiatla_Korytarz
+	features
+		input1: in event port;
+		input2: in event port;
 end Swiatla_Korytarz;
 
 device implementation Swiatla_Korytarz.impl
 end Swiatla_Korytarz.impl;
 
+
 device Kamera_Korytarz
+		features
+		output: out data port;
+		input1: in event port;
+		input2: in event port;
 end Kamera_Korytarz;
 
 device implementation Kamera_Korytarz.impl
 end Kamera_Korytarz.impl;
 
 device Czujnik_Ruchu
+	features
+		syg1: out event port;
+		syg2: out event port;
+		syg3: out event port;
 end Czujnik_Ruchu;
 
 device implementation Czujnik_Ruchu.impl
 end Czujnik_Ruchu.impl;
 
-end Projekt;
+bus sygnal
+	features
+		input: in event port;
+end sygnal;
+
+bus implementation sygnal.impl
+end sygnal.impl;
+
+--Sterowanie----------------------------------------------------------------------------------------------------------------------
+
+system Sterowanie
+	features
+		dane: in data port;
+		inp2: in data port;
+		inp3: in data port;
+		inp4: in data port;
+		czas: in event port;
+		czas1: out event port;
+		--czas2: in event port;
+		czas3: out event port;
+		p21: in event port;
+end Sterowanie;
+
+system implementation Sterowanie.impl
+	subcomponents
+		Materialy_Video: memory Materialy_Video.impl;
+		Nagrania: bus Nagrania.impl;
+		Sterowanie: bus ster.impl;
+		cpu: processor CPU.impl;
+		nagryw: process nagryw.impl;
+	connections
+	    p1: port dane -> Sterowanie.data1;
+		p2: port Sterowanie.masa -> cpu.masa;
+		p3: port cpu.wyl -> czas1;
+		p4: port Sterowanie.nagranie -> nagryw.wej;
+		p41: port nagryw.wyj -> Materialy_Video.output1;
+		p5: port Sterowanie.out1 -> cpu.wyl1;
+		p6: port czas -> Sterowanie.in1;
+		--p7: port czas2 -> Sterowanie.in2;
+		p8: port inp2 -> Sterowanie.data2;
+		p9: port cpu.wl1 -> czas3;
+		p10: port p21 -> cpu.w1;
+end Sterowanie.impl;
+
+data Nagran
+end Nagran;
+
+data implementation Nagran.impl
+end Nagran.impl;
+
+bus Nagrania
+	features
+		input: out data port;
+		input1: out data port;
+		input2: out data port;
+		input3: out data port;
+		input4: out data port;
+		outpu1: out data port;
+end Nagrania;
+
+bus implementation Nagrania.impl
+end Nagrania.impl;
+
+bus ster
+	features
+		in1: in event port;
+	--	in2: in event port;
+		out1: out event port;
+		out2: out event port;
+		data1: in data port;
+		masa: out data port;
+		nagranie: out data port;
+		data2: in data port;
+end ster;
+
+bus implementation ster.impl
+end ster.impl;
+
+processor CPU
+	features
+		wyl: out event port;
+		wyl1: in event port;
+		wl1: out event port;
+		masa: in data port;
+		w1: in event port;
+end CPU;
+
+processor implementation CPU.impl
+end CPU.impl;
+
+----------------:
+
+Thread zgrywanie
+	features
+		input1: in data port;
+		input2: out data port;
+	properties
+		Dispatch_Protocol => Sporadic;
+		Compute_Execution_Time => 0ms..2ms;
+		Deadline => 15ms;
+		Period => 10000ms;
+		Dispatch_Offset => 5ms;
+end zgrywanie;
+
+Thread implementation zgrywanie.impl
+end zgrywanie.impl;
+
+memory Materialy_Video
+		features
+		output1: in data port;
+end Materialy_Video;
+
+memory implementation Materialy_Video.impl
+end Materialy_Video.impl;
+
+process nagryw
+	features
+		wyj: out data port;
+		wej: in data port;
+end nagryw;
+
+process implementation nagryw.impl
+	subcomponents
+		th_nagryw: thread nagrywanie.impl;
+		th_zgryw: thread zgrywanie.impl;
+	connections
+		c1: port th_nagryw.nagryw -> th_zgryw.input1;
+		c2: port th_zgryw.input2 -> wyj;
+		c3: port wej -> th_nagryw.nag;
+end nagryw.impl;
+
+Thread nagrywanie
+	features
+		Nagryw: out data port;
+		nag: in data port;
+	properties
+		Dispatch_Protocol => Sporadic;
+		Compute_Execution_Time => 0ms..2ms;
+		Deadline => 15ms;
+		Period => 10000ms;
+		Dispatch_Offset => 5ms;
+end nagrywanie;
+
+Thread implementation Nagrywanie.impl
+end Nagrywanie.impl;
+
+----------------:
+--processor zegar
+--end zegar;
+
+--processor implementation zegar.impl
+--end zegar.impl;
+
+--process liczenie
+--end liczenie;
+
+--process implementation liczenie.impl
+--end liczenie.impl;
+
+end Projekt_Winda;
+
+--process
