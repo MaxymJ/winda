@@ -6,6 +6,9 @@ Opis Modelu
 
 Model Windy przedstawia układ połączonych systemów, którego celem jest realizacja działania inteligentnej windy obsługującej kabinę, piętra, elementy bezpieczeństwa oraz system sterowania, wraz z obsługą nagrań wideo i sygnałów sterujących. Wszystkie zadania realizowane jest przez processor CPU, który połączony jest przez pętlę sprzężenia zwrotnego z głownymi magistralami każdego systemu. 
 
+![image alt](https://github.com/MaxymJ/winda/blob/5a97e7a348031d4bcbd15e7bd00c6c565c98034a/bc56a4b5-e1dd-4e55-8184-aa1fb268c246.jpg)
+
+
 Spis komponentów:
 
 SYSTEM:
@@ -122,4 +125,3 @@ a) CPU – procesor realizujący sterowanie i planowanie wątków;
 ![image alt](https://github.com/MaxymJ/winda/blob/f36674931b903a6b6c6dc08819bb331f6466923f/30632716-7b2b-488a-8a33-88ea7221c44e.jpg)
 ![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/686bd0c7-729d-49e5-b157-9e63ca8aff43.jpg)
 ![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/61a8d5a8-3ed1-40e3-ae02-566ef6fed44b.jpg)
-![image alt](https://github.com/MaxymJ/winda/blob/5a97e7a348031d4bcbd15e7bd00c6c565c98034a/bc56a4b5-e1dd-4e55-8184-aa1fb268c246.jpg)
