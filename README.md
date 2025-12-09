@@ -8,9 +8,9 @@ Model Windy przedstawia układ połączonych systemów, którego celem jest real
 
 Spis komponentów:
 SYSTEM:
-A) Winda_Proj - główny system zawierający cały projekt
-B) Kabina - podsystem systemu Winda_Proj
-C) Przyciski_Pieter - podsystem systemu Kabina
+A) Winda_Proj - główny system zawierający cały projekt;
+B) Kabina - podsystem systemu Winda_Proj;
+C) Przyciski_Pieter - podsystem systemu Kabina;
 D) Przyciski_Funkcjonalne - podsystem systemu Kabina
 E) Pietra - podsystem systemu Winda_Proj
 F) Pietro0 - podsystem systemu Pietra
