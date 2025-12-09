@@ -17,11 +17,15 @@ A) Winda_Proj - główny system zawierający cały projekt;
 
 B) Kabina - podsystem systemu Winda_Proj;
 
+![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/686bd0c7-729d-49e5-b157-9e63ca8aff43.jpg)
+
 C) Przyciski_Pieter - podsystem systemu Kabina;
 
 D) Przyciski_Funkcjonalne - podsystem systemu Kabina;
 
 E) Pietra - podsystem systemu Winda_Proj;
+
+![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/61a8d5a8-3ed1-40e3-ae02-566ef6fed44b.jpg)
 
 F) Pietro0 - podsystem systemu Pietra;
 
@@ -32,6 +36,13 @@ H) Pietro2 - podsystem systemu Pietra;
 I) Pietro3 - podsystem systemu Pietra;
 
 J) Sterowanie - podsystem systemu Winda_Proj;
+
+![image alt](https://github.com/MaxymJ/winda/blob/f36674931b903a6b6c6dc08819bb331f6466923f/30632716-7b2b-488a-8a33-88ea7221c44e.jpg)
+
+Połączenia między systemami Kabina, Pietra, Sterowanie:
+
+![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/4dfd9af8-c26d-4394-9225-4471e540a4c3.jpg)
+
 
 DEVICE:
 
@@ -120,8 +131,3 @@ a) Materialy_Video – pamięć przechowująca materiały wideo;
 PROCESSOR:
 
 a) CPU – procesor realizujący sterowanie i planowanie wątków;
-
-![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/4dfd9af8-c26d-4394-9225-4471e540a4c3.jpg)
-![image alt](https://github.com/MaxymJ/winda/blob/f36674931b903a6b6c6dc08819bb331f6466923f/30632716-7b2b-488a-8a33-88ea7221c44e.jpg)
-![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/686bd0c7-729d-49e5-b157-9e63ca8aff43.jpg)
-![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/61a8d5a8-3ed1-40e3-ae02-566ef6fed44b.jpg)
