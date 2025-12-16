@@ -4,130 +4,101 @@ mjura@student.agh.edu.pl
 
 Opis Modelu
 
-Model Windy przedstawia układ połączonych systemów, którego celem jest realizacja działania windy, która sterowana przez elementy systemu maszynownia. Układ przedstawiony został w środowisku OSATE2 wykorzystuje elementy takie jak acces connection, bus, device, port connection, memory, flow czy process.
-
-![image alt](https://github.com/MaxymJ/winda/blob/main/winda3p.png)
+Model Windy przedstawia układ połączonych systemów, którego celem jest realizacja działania inteligentnej windy obsługującej kabinę, piętra, elementy bezpieczeństwa oraz system sterowania, wraz z obsługą nagrań wideo i sygnałów sterujących. Wszystkie zadania realizowane jest przez processor CPU, który połączony jest przez pętlę sprzężenia zwrotnego z głownymi magistralami każdego systemu.  Każde z urządzeń połączone jest do magistrali zasilającej, elementy sterujące do magistrali CAN.
 
 
-Spis komponentów:
+SCHEMAT CAŁEGO UKŁADU:
+![image alt](https://github.com/MaxymJ/winda/blob/5a97e7a348031d4bcbd15e7bd00c6c565c98034a/bc56a4b5-e1dd-4e55-8184-aa1fb268c246.jpg)
 
-SYSTEM:
+W systemie głównym znajdują się:
 
-A) Winda_Proj - główny system zawierający cały projekt;
+2 magistrale
 
-B) Kabina - podsystem systemu Winda_Proj;
+a) Magistrala zasilająca: 
+bus Szyna_Zasilania;
 
-![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/686bd0c7-729d-49e5-b157-9e63ca8aff43.jpg)
+b) Magistrala sterująca:
+bus Kabel_CAN;
 
-C) Przyciski_Pieter - podsystem systemu Kabina;
+1 urządzenie
 
-D) Przyciski_Funkcjonalne - podsystem systemu Kabina;
+c) zasilacz główny:
+device Glowne_Zasilanie;
 
-E) Pietra - podsystem systemu Winda_Proj;
+2 podsystemy
 
-![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/61a8d5a8-3ed1-40e3-ae02-566ef6fed44b.jpg)
+d) System Kabiny windy:
+system Kabina;
 
-F) Pietro0 - podsystem systemu Pietra;
+e) System maszynowni sterujacej:
+system Maszynownia;
 
-G) Pietro1 - podsystem systemu Pietra;
+PODSYSTEM KABINA:
+![image alt](https://github.com/MaxymJ/winda/blob/main/kabina.png)
 
-H) Pietro2 - podsystem systemu Pietra;
+1 procesor
 
-I) Pietro3 - podsystem systemu Pietra;
+a) Jednostka obliczeniowa kabiny:
+processor cpu;
 
-J) Sterowanie - podsystem systemu Winda_Proj;
+1 pamięć
 
-![image alt](https://github.com/MaxymJ/winda/blob/f36674931b903a6b6c6dc08819bb331f6466923f/30632716-7b2b-488a-8a33-88ea7221c44e.jpg)
+b) Pamięć lokalna: 
+memory pamiec;
 
-Połączenia między systemami Kabina, Pietra, Sterowanie:
+1 magistrala
 
-![image alt](https://github.com/MaxymJ/winda/blob/79999a28ceb7776975f09dcdee6550253182f078/4dfd9af8-c26d-4394-9225-4471e540a4c3.jpg)
+c) Magistrala lokalna danych: 
+bus szyna_lok;
 
+1 proces
 
-DEVICE:
+d) Aplikacja sterująca kabiną: 
+process aplikacja;
 
-a) Przycisk_Pietra_0 – urządzenie wyboru piętra 0;
+4 urządzenia
 
-b) Przycisk_Pietra_1 – urządzenie wyboru piętra 1;
+e) Mechanizm otwierania drzwi: 
+device drzwi;
 
-c) Przycisk_Pietra_2 – urządzenie wyboru piętra 2;
+f) Oświetlenie wewnętrzne: 
+device swiatlo;
 
-d) Przycisk_Pietra_3 – urządzenie wyboru piętra 3;
+g) Kamera monitoringu: 
+device kamera;
 
-e) Przyciski_Awarii – przycisk zgłoszenia awarii;
+h) Panel przycisków pasażera:
+device panel;
 
-f) Przycisk_STOP – przycisk awaryjnego zatrzymania;
+PODSYSTEM MASZYNOWNIA:
+![image alt](https://github.com/MaxymJ/winda/blob/main/maszynownia.png)
 
-g) Przycisk_Pomoc – przycisk wezwania pomocy;
+1 procesor
 
-h) Przycisk_Otworz_Drzwi – przycisk otwierania drzwi;
+a) Główny procesor sterujący:
+processor cpu;
 
-i) Przycisk_Zamknij_Drzwi – przycisk zamykania drzwi;
+1 pamięć
 
-j) Przycisk_Komunikatow_Glosowych – przycisk komunikatów głosowych;
+b) Złożona pamięć sterownika (Flash/RAM):
+memory pamiec;
 
-k) Wentylator – przycisk wentylacji;
+1 magistrala
 
-l) Wentylator_Windy – wentylator kabiny windy;
+c) Magistrala systemowa:
+bus szyna_sys;
 
-m) Drzwi – drzwi windy;
+1 proces
 
-n) Glosnik – głośnik w kabinie;
+d) Aplikacja logiki sterowania windą:
+process aplikacja;
 
-o) Mikrofon – mikrofon w kabinie;
+2 urządzenia
 
-p) Wyswietlacz – wyświetlacz informacyjny;
+e) Silnik wciągarki:
+device silnik;
 
-q) Swiatla_Winda – oświetlenie kabiny;
-
-r) Kamera_Winda – kamera w kabinie;
-
-s) Waga – czujnik masy w kabinie;
-
-t) Swiatla_Korytarz – oświetlenie korytarza piętra;
-
-u) Kamera_Korytarz – kamera korytarzowa;
-
-v) Czujnik_Ruchu – czujnik ruchu na piętrze;
-
-BUS:
-
-a) wylaczanie – magistrala sterowania wyłączaniem i zbierania danych;
-
-b) sygnaly – magistrala sygnałów pomiędzy piętrami i sterowaniem;
-
-c) kryzys – magistrala sygnałów kryzysowych;
-
-d) element – magistrala sterowania urządzeniami (wentylator, głośnik);
-
-e) element2 – magistrala sterowania zasilaniem urządzeń;
-
-f) polaczanie – magistrala sterowania urządzeniami pięter;
-
-g) pietra1 – magistrala agregacji nagrań z pięter;
-
-h) sygnal – magistrala sygnałowa pomocnicza;
-
-i) Nagrania – magistrala przesyłania danych nagrań;
-
-j) ster – magistrala sterowania systemem;
-
-k) sygnaly – magistrala sygnałów pomiędzy systemami;
-
-PROCESS:
-
-a) nagryw – proces odpowiedzialny za obsługę nagrań wideo;
-
-THREAD:
-
-a) nagrywanie – wątek odpowiedzialny za odbiór i zapisy nagrań;
-
-b) zgrywanie – wątek odpowiedzialny za przekazywanie nagrań;
-
-MEMORY
-
-a) Materialy_Video – pamięć przechowująca materiały wideo;
-
-PROCESSOR:
+f) Wyświetlacz numeru piętra:
+device lcd_pietra;
 
 a) CPU – procesor realizujący sterowanie i planowanie wątków;
