@@ -109,6 +109,8 @@ a)Computing Electrical Power for Szyna_Zasilania
 
 <img width="1791" height="121" alt="image" src="https://github.com/user-attachments/assets/6b613d59-bb79-4a3e-a37b-380142fc5937" />
 
+Magistrala zasilania przesyłą do urządzeń wystarczającą ilość mocy z zasilacza
+
 b)Resource Budget Analysis
 
 <img width="1306" height="1321" alt="image" src="https://github.com/user-attachments/assets/3a6ece3e-300a-4e01-9f5b-2fcf57981fb0" />
