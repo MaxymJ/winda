@@ -8,7 +8,7 @@ Model Windy przedstawia układ połączonych systemów, którego celem jest real
 
 
 SCHEMAT CAŁEGO UKŁADU:
-![image alt](https://github.com/MaxymJ/winda/blob/5a97e7a348031d4bcbd15e7bd00c6c565c98034a/bc56a4b5-e1dd-4e55-8184-aa1fb268c246.jpg)
+![image alt](https://github.com/MaxymJ/winda/blob/main/winda3p.png)
 
 W systemie głównym znajdują się:
 
