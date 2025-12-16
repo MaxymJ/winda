@@ -4,9 +4,9 @@ mjura@student.agh.edu.pl
 
 Opis Modelu
 
-Model Windy przedstawia układ połączonych systemów, którego celem jest realizacja działania inteligentnej windy obsługującej kabinę, piętra, elementy bezpieczeństwa oraz system sterowania, wraz z obsługą nagrań wideo i sygnałów sterujących. Wszystkie zadania realizowane jest przez processor CPU, który połączony jest przez pętlę sprzężenia zwrotnego z głownymi magistralami każdego systemu. 
+Model Windy przedstawia układ połączonych systemów, którego celem jest realizacja działania windy, która sterowana przez elementy systemu maszynownia. Układ przedstawiony został w środowisku OSATE2 wykorzystuje elementy takie jak acces connection, bus, device, port connection, memory, flow czy process.
 
-![image alt](https://github.com/MaxymJ/winda/blob/5a97e7a348031d4bcbd15e7bd00c6c565c98034a/bc56a4b5-e1dd-4e55-8184-aa1fb268c246.jpg)
+![image alt](https://github.com/MaxymJ/winda/blob/main/winda3p.png)
 
 
 Spis komponentów:
