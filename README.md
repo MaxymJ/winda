@@ -2,12 +2,12 @@
 PROJEKT WINDY
 mjura@student.agh.edu.pl
 
-Opis Modelu
+**Opis Modelu**
 
 Model Windy przedstawia układ połączonych systemów, którego celem jest realizacja działania inteligentnej windy obsługującej kabinę, piętra, elementy bezpieczeństwa oraz system sterowania, wraz z obsługą nagrań wideo i sygnałów sterujących. Wszystkie zadania realizowane jest przez processor CPU, który połączony jest przez pętlę sprzężenia zwrotnego z głownymi magistralami każdego systemu.  Każde z urządzeń połączone jest do magistrali zasilającej, elementy sterujące do magistrali CAN.
 
 
-SCHEMAT CAŁEGO UKŁADU:
+**SCHEMAT CAŁEGO UKŁADU:**
 ![image alt](https://github.com/MaxymJ/winda/blob/main/winda3p.png)
 
 W systemie głównym znajdują się:
@@ -33,7 +33,7 @@ system Kabina;
 e) System maszynowni sterujacej:
 system Maszynownia;
 
-PODSYSTEM KABINA:
+**PODSYSTEM KABINA:**
 ![image alt](https://github.com/MaxymJ/winda/blob/main/kabina.png)
 
 1 procesor
@@ -70,7 +70,7 @@ device kamera;
 h) Panel przycisków pasażera:
 device panel;
 
-PODSYSTEM MASZYNOWNIA:
+**PODSYSTEM MASZYNOWNIA:**
 ![image alt](https://github.com/MaxymJ/winda/blob/main/maszynownia.png)
 
 1 procesor
@@ -103,7 +103,7 @@ device lcd_pietra;
 
 a) CPU – procesor realizujący sterowanie i planowanie wątków;
 
-Wykonane analizy:
+**Wykonane analizy:**
 
 a)Computing Electrical Power for Szyna_Zasilania
 
@@ -113,7 +113,7 @@ b)Resource Budget Analysis
 
 <img width="1306" height="1321" alt="image" src="https://github.com/user-attachments/assets/3a6ece3e-300a-4e01-9f5b-2fcf57981fb0" />
 
-LITERATURA:
+**LITERATURA:**
 [1] OSATE 2 - Open Source AADL Tool Environment - https://osate.org/
 [2] AADL Community Resources and Examples - https://github.com/osate <br [3] SAE International, "AS5506C: Architecture Analysis & Design Language (AADL)," SAE International Standard, 2017 - https://www.sae.org/standards/content/as5506c/>
 [3] Introduction to AADLa and OSATE - https://www.youtube.com/watch?v=MjUQZaqaTA4
