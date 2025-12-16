@@ -102,3 +102,9 @@ f) Wyświetlacz numeru piętra:
 device lcd_pietra;
 
 a) CPU – procesor realizujący sterowanie i planowanie wątków;
+
+Wykonane analizy:
+
+a)Computing Electrical Power for Szyna_Zasilania
+
+<img width="1791" height="121" alt="image" src="https://github.com/user-attachments/assets/6b613d59-bb79-4a3e-a37b-380142fc5937" />
